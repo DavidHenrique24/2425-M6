@@ -74,38 +74,58 @@ function mostrarPreguntas() {
       if (opcionEscogida[i].innerHTML == preguntaActual.respuestas[numRespuestaCorrecta]) {
         resultado.className = 'alert alert-success'; // Pintar de verde el mensaje con bootstrap 
         resultado.innerHTML = `La respuesta es Correcta!!`;
-        mouJugador(true); 
+        moverJugador(true); 
       } else {
         resultado.className = 'alert alert-danger'; // 
         resultado.innerHTML = `La respuesta es incorrecta.`; // Mensaje de error
-        mouJugador(false); 
+        moverJugador(false); 
       }
     });
   }
 }
 
+
 // Función para mover al jugador
-function mouJugador(endavant) {
-    if (endavant == true) {
-        posicioActual += 1; 
-        encerts += 1; 
-        console.log(`Respuesta correcta! Nueva posición: ${posicioActual}`);
-    } else {
-        posicioActual -= 3; 
-        if (posicioActual < 1) {
-            posicioActual = 1; 
-        }
-        errors += 1; 
-        console.log(`Respuesta incorrecta! Nueva posición: ${posicioActual}`);
-    }
-    comprovaFinalJoc()
+
+function moverJugador(endavant) {
+  if (endavant == true) {
+      // Marcar la casilla actual en rojo
+      casillas[posicioActual].classList.add('div-point');
+      
+      // Si no es la primera casilla, marcar la anterior en gris
+      if (posicioActual > 0) {
+          casillas[posicioActual - 1].classList.add('div-gris');
+          casillas[posicioActual - 1].classList.remove('div-point');
+      }
+
+      // Incrementar la posición y los aciertos
+      posicioActual += 1; 
+      encerts += 1; 
+      console.log(`Respuesta correcta! Nueva posición: ${posicioActual}`);
+  } else {
+     
+      for (let i = 0; i < casillas.length; i++) {  // Si el jugador se equivoca, eliminar las clases gris de todas las casillas anteriores
+          casillas[i].classList.remove('div-gris');
+      }
+      casillas[posicioActual - 1].classList.remove('div-point');// Remove el color rojo de la casilla actual
+      posicioActual -= 3; // Retroceder tres posiciones
+      if (posicioActual < 1) {
+          posicioActual = 1;  // Si la posición es menor a 1, establecerla en 1
+      }
+      errors += 1;  // Actualizar los errores
+      console.log(`Respuesta incorrecta! Nueva posición: ${posicioActual}`);
+      casillas[posicioActual - 1].classList.add('div-point');// Aplicar el color rojo a la nueva casilla actual
+  }
+  comprovaFinalJoc();// Comprueba si se ha llegado a la última casilla
 }
+
 
 function comprovaFinalJoc(){
     if (posicioActual == 20){ 
     console.log(`Has llegado a la casilla 20, Felicidades!!!, aciertos: ${encerts}, erorres: ${errors}`);
+    document.querySelector("next-question").display = "none";
     }
-    document.querySelector('#next-question').style.display = "none";
+   
 
 }
 

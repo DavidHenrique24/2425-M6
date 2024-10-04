@@ -1,0 +1,70 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cuadrado{ 
+            width: 200px;
+            height: 200px;
+            border: 1px solid;         
+           
+
+        }
+        #c1 {
+          background-color: blueviolet;
+           
+        }
+        #c2 {
+          background-color: rgb(84, 184, 214);
+           
+        }
+        #c3 {
+          background-color: rgb(81, 88, 187);
+           
+        }
+        .lado{
+            display: flex;
+            gap: 10px;
+    
+        }
+
+        .alerta{
+            background-color: rgb(255, 238, 0);
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="lado">
+        <div id="c1" class="cuadrado">1</div>
+        <div id="c2" class="cuadrado">2</div>
+        <div id="c3" class="cuadrado">3</div>
+        
+    </div>
+    <script>
+        console.log("Hola");
+        const arraydiv = document.querySelectorAll(".cuadrado");
+        console.log = (arraydiv[1]);
+        for(i= 0 ;i<arraydiv.length;i++){
+            console.log = (arraydiv[i]);
+
+        }
+
+       
+        arraydiv[2].classList.remove("c2");
+        arraydiv[2].classList.add("c2")
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>
