@@ -121,7 +121,8 @@ function moverJugador(endavant) {
 function comprovaFinalJoc(){
     if (posicioActual == 20){ 
     console.log(`Has llegado a la casilla 20, Felicidades!!!, aciertos: ${encerts}, erorres: ${errors}`);
-    document.querySelector("next-question").display = "none";
+    document.querySelector("#next-question").style.display = "none";
+  
     }
    
 
