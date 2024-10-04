@@ -31,14 +31,14 @@ let quiz = [
 
 // Variables para el estado del jugador
 let posicioActual = 1; // La posición actual del jugador
-let encerts = 0; // Contador de respuestas correctas
-let errors = 0; // Contador de respuestas incorrectas
+let encerts = 0; // Contador  correctas
+let errors = 0; // Contador incorrectas
 
 console.log('Posición inicial:', posicioActual);
 console.log('Encerts:', encerts);
 console.log('Errors:', errors);
 
-let preguntaActual; // Variable para guardar la pregunta actual
+let preguntaActual; // guardar la pregunta actual
 
 // Función para mostrar las preguntas
 function mostrarPreguntas() {
@@ -62,7 +62,7 @@ function mostrarPreguntas() {
   document.querySelector('#answers').innerHTML = botonRespuestas; // Muestra los botones respuesta
 
   const opcionEscogida = document.querySelectorAll('#answers button'); // Selecciona los botones de respuesta
-  const numRespuestaCorrecta = preguntaActual.correcta; // Índice de la respuesta correcta
+  const numRespuestaCorrecta = preguntaActual.correcta; 
   const resultado = document.querySelector('#result'); // Div donde se muestra el resultado
   resultado.style.display = "none"; // Oculta el resultado al inicio
 
@@ -72,11 +72,11 @@ function mostrarPreguntas() {
       resultado.style.display = "block"; // Muestra el resultado al seleccionar respuesta
       
       if (opcionEscogida[i].innerHTML == preguntaActual.respuestas[numRespuestaCorrecta]) {
-        resultado.className = 'alert alert-success'; // Pintar de verde el mensaje con bootstrap 
+        resultado.className = 'alert alert-success'; // Pintar de verde el mensaje 
         resultado.innerHTML = `La respuesta es Correcta!!`;
         moverJugador(true); 
       } else {
-        resultado.className = 'alert alert-danger'; // 
+        resultado.className = 'alert alert-danger'; // Pinta de rojo el mensaje
         resultado.innerHTML = `La respuesta es incorrecta.`; // Mensaje de error
         moverJugador(false); 
       }
@@ -97,11 +97,9 @@ function moverJugador(endavant) {
           casillas[posicioActual - 1].classList.add('div-gris');
           casillas[posicioActual - 1].classList.remove('div-point');
       }
-
-      // Incrementar la posición y los aciertos
-      posicioActual += 1; 
-      encerts += 1; 
-      console.log(`Respuesta correcta! Nueva posición: ${posicioActual}`);
+      posicioActual += 1;  //aumenta las posiciones
+      encerts += 1; //aumenta los aciertos
+      console.log(`Respuesta correcta! Nueva posición: ${posicioActual}`); //muestra la posicion que estas en consola
   } else {
      
       for (let i = 0; i < casillas.length; i++) {  // Si el jugador se equivoca, eliminar las clases gris de todas las casillas anteriores
