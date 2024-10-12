@@ -29,7 +29,7 @@ function crearFicha(event) {
 }
 
 function pintaTabla() {
-    // Captura la tabla donde se mostrarán los usuarios
+    // Captura el cuerpo de la tabla donde se mostrarán los usuarios
     const tbody = document.querySelector('tbody');
     tbody.innerHTML = '';  // Limpia la tabla antes de llenarla 
 
