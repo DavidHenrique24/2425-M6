@@ -33,7 +33,7 @@ function pintaTabla() {
     const tbody = document.querySelector('tbody');
     tbody.innerHTML = '';  // Limpia la tabla antes de llenarla 
 
-    // Recorrer el array bd y generar las filas de la tabla
+    // Recorre el array bd y generar las filas de la tabla
     for (let i = 0; i < bd.length; i++) {
         const usuario = bd[i];
         const fila = `
@@ -45,11 +45,9 @@ function pintaTabla() {
               <td>${usuario.dni}</td>
             </tr>
         `;
-        // Insertar la fila generada en la tabla
+        // Inserta la fila generada en la tabla
         tbody.innerHTML += fila;
     }
 }
-
-// Capturar el botón y añadir el evento
 const botonCrearFicha = document.querySelector('#crearFiche');
 botonCrearFicha.addEventListener('click', crearFicha);
