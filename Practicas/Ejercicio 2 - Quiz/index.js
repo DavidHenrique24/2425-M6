@@ -41,7 +41,7 @@ function mostrarPreguntas() {
   const divPreguntas = document.querySelector('#answers'); // Crea constante para respuestas
   divPreguntas.innerHTML = ''; // Vacia las respuestas anteriores
 
-  // Crear los botones de respuesta dinámicamente
+  // Crear los botones de respuesta dinamicamente
   let botonRespuestas = '';
   for (let i = 0; i < preguntaActual.respuestas.length; i++) { // Pone las respuestas en los botones
     botonRespuestas += 
