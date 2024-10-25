@@ -1,85 +1,114 @@
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicis Matemàtics</title>
+    <title>eje2</title>
 </head>
 <body>
-    <h1>Exercicis Matemàtics amb JavaScript</h1>
-
-    <!-- Exercici 1 - Valor absolut -->
-    <h2>Exercici 1 - Valor absolut</h2>
-    <input type="number" id="num1" placeholder="Introdueix un número">
-    <button id="botonValorAbsolut">Calcular Valor Absolut</button>
-    <div id="resultatValorAbsolut"></div>
-    <br>
-
-    <!-- Exercici 2 - Signe d'un número -->
-    <h2>Exercici 2 - Signe d'un número</h2>
-    <input type="number" id="num2" placeholder="Introdueix un número">
-    <button id="botonSigne">Determinar Signe</button>
-    <div id="resultatSigne"></div>
-    <br>
-
-    <!-- Exercici 3 - Màxim de tres números -->
-    <h2>Exercici 3 - Màxim de tres números</h2>
-    <input type="number" id="num3" placeholder="Número 1">
-    <input type="number" id="num4" placeholder="Número 2">
-    <input type="number" id="num5" placeholder="Número 3">
-    <button id="botonMaxim">Trobar Màxim</button>
-    <div id="resultatMaxim"></div>
-    <br>
-
-    <!-- Exercici 4 - Mínim d'un array -->
-    <h2>Exercici 4 - Mínim d'un array</h2>
-    <input type="text" id="numArray" placeholder="Introdueix un array (separat per comes)">
-    <button id="botonMinim">Trobar Mínim</button>
-    <div id="resultatMinim"></div>
-    <br>
-
-    <!-- Exercici 5 - Arrel quadrada -->
-    <h2>Exercici 5 - Arrel quadrada</h2>
-    <input type="number" id="num6" placeholder="Introdueix un número">
-    <button id="botonArrel">Calcular Arrel Quadrada</button>
-    <div id="resultatArrel"></div>
-    <br>
-
-    <!-- Exercici 6 - Arrodonir un número -->
-    <h2>Exercici 6 - Arrodonir un número</h2>
-    <input type="number" step="0.01" id="num7" placeholder="Introdueix un número decimal">
-    <button id="botonArrodonir">Arrodonir</button>
-    <div id="resultatArrodonir"></div>
-    <br>
-
-    <!-- Exercici 7 - Arrodonir cap amunt -->
-    <h2>Exercici 7 - Arrodonir cap amunt</h2>
-    <input type="number" step="0.01" id="num8" placeholder="Introdueix un número decimal">
-    <button id="botonCeil">Arrodonir Cap Amunt</button>
-    <div id="resultatCeil"></div>
-    <br>
-
-    <!-- Exercici 8 - Arrodonir cap avall -->
-    <h2>Exercici 8 - Arrodonir cap avall</h2>
-    <input type="number" step="0.01" id="num9" placeholder="Introdueix un número decimal">
-    <button id="botonFloor">Arrodonir Cap Avall</button>
-    <div id="resultatFloor"></div>
-    <br>
-
-    <!-- Exercici 9 - Eliminar part decimal -->
-    <h2>Exercici 9 - Eliminar part decimal</h2>
-    <input type="number" step="0.01" id="num10" placeholder="Introdueix un número">
-    <button id="botonTruncar">Eliminar Part Decimal</button>
-    <div id="resultatTruncar"></div>
-    <br>
-
-    <!-- Exercici 10 - Calcular sinus -->
-    <h2>Exercici 10 - Calcular sinus</h2>
-    <input type="number" id="angle" placeholder="Introdueix un angle en graus">
-    <button id="botonSinus">Calcular Sinus</button>
-    <div id="resultatSinus"></div>
-    <br>  
+    <h1>ejercicio 2</h1>
     
-    <script src="ejercicio2.js">
+    <script>
+        //exercici 1 - Valor abdolut
+        function valorAbsolut(num) {
+            return Math.abs(num);
+        }
+        // Exemple d'ús:
+        console.log(valorAbsolut(-5)); // Retorna 5
+        console.log(valorAbsolut(3));  // Retorna 3
         
-    </script>
-    </body>
+        //Exercici 2 - Signe d'un número
+        function determinarSigne(num) {
+            var signo = Math.sign(num);
+            if (signo === 1) {
+                return "El numero es positivo.";
+            } else if (signo === -1) {
+                return "El numero es negativo";
+            } else {
+                return "El numero es 0";
+            }
+        }
+        // Exemple d'ús:
+        console.log(determinarSigne(-10)); // Retorna "El número és negatiu."
+        console.log(determinarSigne(0));   // Retorna "El número és zero."
+        console.log(determinarSigne(7));   // Retorna "El número és positiu."
+        
+        //Exercici 3 - Màxim de tres números
+        function trobarMaxim(a, b, c) {
+            return Math.max(a, b, c);
+        }
+        
+        // Exemple d'ús:
+        console.log(trobarMaxim(5, 10, 3)); // Retorna 10
+        
+        
+        //Exercici 4 - Màxim de tres números
+        function trobarMinim(arrayNumeros) {
+            return Math.min(arrayNumeros);
+        }
+        
+        // Exemple d'ús:
+        var numeros = [3, 7, 2, 9, 4];
+        console.log(trobarMinim(numeros)); // Retorna 2
+
+        // Exercici 5 - Arrel quadrada
+        function calcularArrelQuadrada(num) {
+        if (num >= 0) {
+        return Math.sqrt(num);
+        } else {
+        return "No es pot calcular l'arrel quadrada d'un número negatiu.";
+         }
+        }
+
+// Exemple d'ús:
+console.log(calcularArrelQuadrada(16)); // Retorna 4
+console.log(calcularArrelQuadrada(-9)); // Retorna "No es pot calcular l'arrel quadrada d'un número negatiu."
+
+// Exercici 6 - Arrodonir un número a l'enter més proper
+function arrodonirNumero(num) {
+    return Math.round(num);
+}
+
+// Exemple d'ús:
+console.log(arrodonirNumero(4.6)); // Retorna 5
+console.log(arrodonirNumero(4.3)); // Retorna 4
+
+// Exercici 7 - Arrodonir cap amunt
+function arrodonirCapAmunt(num) {
+    return Math.ceil(num);
+}
+
+// Exemple d'ús:
+console.log(arrodonirCapAmunt(3.1)); // Retorna 4
+console.log(arrodonirCapAmunt(7.9)); // Retorna 8
+
+// Exercici 8 - Arrodonir cap avall
+function arrodonirCapAvall(num) {
+    return Math.floor(num);
+}
+
+// Exemple d'ús:
+console.log(arrodonirCapAvall(5.8)); // Retorna 5
+console.log(arrodonirCapAvall(2.2)); // Retorna 2
+
+// Exercici 9 - Eliminar la part decimal d'un número
+function truncarNumero(num) {
+    return Math.trunc(num);
+}
+
+// Exemple d'ús:
+console.log(truncarNumero(6.7));   // Retorna 6
+console.log(truncarNumero(-6.7));  // Retorna -6
+
+// Exercici 10 - Calcular el sinus d'un angle
+function calcularSinus(angleGraus) {
+    const angleRadianes = angleGraus * (Math.PI / 180);
+    return Math.sin(angleRadianes);
+}
+
+// Exemple d'ús:
+console.log(calcularSinus(30)); // Retorna 0.5
+console.log(calcularSinus(90)); // Retorna 1
+
+</script>
+</body>
+</html>
