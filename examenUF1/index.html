@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <h1 class="text-center text-primary">Comparador de coches potentes 2021</h1>
+    <h1 class="text-center text-primary">Comparador de coches potentes 2021</h1> 
 
     <div class="container-fluid">
         <!-- Tarjetas -->
@@ -109,7 +109,7 @@
     
             <div class="container mb-3">
                 <label for="formGroupExampleInput" class="form-label">Buscar coches con más de:</label>
-                <input type="text" class="form-control" id="buscarInput" placeholder="Escribe la potencia">
+                <input type="text" class="form-control" id="buscarInput" placeholder="Escribe la potencia"> 
                 <button class="btn btn-primary bg-success mt-3" id="buscar">Buscar</button>
             </div>
     
@@ -122,9 +122,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         
-        // Array de coches
-    console.log("Hola");
-    let carro = [
+    console.log("Hola"); 
+    let carro = [ //Array de carros
     {
         nombre: "Bugatti Chiron Super Sport 300+",
         potencia: "1500 caballos de fuerza",
@@ -154,11 +153,11 @@
 ];
 
 
-function generarTarjetas(carro) {
-    const contenedor = document.querySelector('#Tarjeta');
-    for (let i = 0; i < carro.length; i++) {
-        const car = carro[i];
-        // estructura
+function generarTarjetas(carro) { //Funcio que genera tarjetas para los carros
+    const contenedor = document.querySelector('#Tarjeta'); //se crea un const que entra en un documento queryselecor tarjeta
+    for (let i = 0; i < carro.length; i++) { //Se crea un for que abarque todo el array de autos
+        const car = carro[i];  //se crea una const carro que agarre cada carro
+        //Se crea una adaptacion de tarjetas
         const tarjeta = `
             <div class="col-md-3 mb-3">
                 <div class="card">
@@ -171,17 +170,17 @@ function generarTarjetas(carro) {
                 </div>
             </div>
         `;
-        contenedor.innerHTML += tarjeta; 
+        contenedor.innerHTML += tarjeta; //Se une todo a la tarjeta
         
     }
 }
 
-generarTarjetas(carro); 
-generarOpcion(carro); //llamar funcion
+generarTarjetas(carro);  //Llama a la funcion tarjeta
+generarOpcion(carro);   //llama a la funcion generarOpcion
 
   // Generar opciones para select
-  function generarOpcion(carro) {
-            const select1 = document.querySelector('#select1');
+  function generarOpcion(carro) { //Crear funcion para generar tablas
+            const select1 = document.querySelector('#select1');  
             const select2 = document.querySelector('#select2');
             let opciones = ''; //aca se almacena el html para rellenarlo 
         for (let i = 0; i < carro.length; i++) {
@@ -211,7 +210,7 @@ generarOpcion(carro); //llamar funcion
         }
     });
 // Busqueda
-document.querySelector('#buscar').addEventListener('click', function () {
+document.querySelector('#buscar').addEventListener('click', function () { //Al seleccionar los botones
     // Recoge el número introducido
     let numeroInfo = parseInt(document.querySelector('#buscarInput').value); //parseint para pasar de texto a numero
     //limpia los pi para que no se acumulen
