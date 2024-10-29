@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen UF1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .subtitulo {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .contenedor {
+            max-width: 1700px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center text-primary">Comparador de coches potentes 2021</h1>
+
+    <div class="container-fluid">
+        <!-- Tarjetas -->
+        <div class="contenedor">
+            <div class="subtitulo">
+                <h2>Tarjeta de coches</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro0">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombreCarro0">Card title</h5>
+                            <p class="card-text" id="potenciaCarro0"></p>
+                            <p id="motorCarro0"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro1">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombreCarro1">Card title</h5>
+                            <p class="card-text" id="potenciaCarro1"></p>
+                            <p id="motorCarro1"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" src="..." alt="Card image cap" id="imagenCarro2">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombreCarro2">Card title</h5>
+                            <p class="card-text" id="potenciaCarro2"></p>
+                            <p id="motorCarro2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" id="imagenCarro3" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombreCarro3">Card title</h5>
+                            <p class="card-text" id="potenciaCarro3"></p>
+                            <p id="motorCarro3"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="card-img-top" id="imagenCarro4" src="..." alt="Card image cap" style="height: 265px;">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombreCarro4">Card title</h5>
+                            <p class="card-text" id="potenciaCarro4"></p>
+                            <p id="motorCarro4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Comparacion de Coches -->
+        <div class="contenedor">
+            <div class="subtitulo">
+                <h2>Comparación de coches</h2>
+            </div>
+            <div class="container">
+                <div class="row justify-content-between m0">
+                    <div class="col-md-5">
+                        <label for="select1" class="form-label">Selecciona primer coche</label>
+                        <select id="select1" class="form-select w-35">
+                            <option selected>Seleccionar</option>
+                            <option value="0" id="tablaIzq0"></option>
+                            <option value="1" id="tablaIzq1"></option>
+                            <option value="2" id="tablaIzq2"></option>
+                            <option value="3" id="tablaIzq3"></option>
+                            <option value="4" id="tablaIzq4"></option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label for="select2" class="form-label">Selecciona segundo coche </label>
+                        <select id="select2" class="form-select w-35">
+                            <option selected>Seleccionar</option>
+                            <option value="0" id="tablaDer0"></option>
+                            <option value="1" id="tablaDer1"></option>
+                            <option value="2" id="tablaDer2"></option>
+                            <option value="3" id="tablaDer3"></option>
+                            <option value="4" id="tablaDer4"></option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary" id="comparar">Comparar</button>
+                    </div>
+                </div>
+             <!-- Tabla -->
+                <table class="table table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Coche 1</th>
+                            <th>Coche 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre</td>
+                            <td id="compararNombre1"></td>
+                            <td id="compararNombre2"></td>
+                        </tr>
+                        <tr>
+                            <td>Potencia</td>
+                            <td id="compararPotencia1"></td>
+                            <td id="compararPotencia2"></td>
+                        </tr>
+                        <tr>
+                            <td>Motor</td>
+                            <td id="compararMotor1"></td>
+                            <td id="compararMotor2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Potencia -->
+        <div class="contenedor">
+            <div class="subtitulo">
+                <h2>Acerca de potencia</h2>
+            </div>
+    
+            <div class="container mb-3">
+                <label for="formGroupExampleInput" class="form-label">Buscar coches con más de:</label>
+                <input type="text" class="form-control" id="buscarInput" placeholder="Introduce la potencia en caballos de fuerza">
+               
+                <button class="btn btn-primary bg-success mt-3" id="buscar">Buscar</button>
+            </div>
+    
+            <div class="mt-3">
+                <h3>Resultados de búsqueda:</h3>
+                <ul id="busquedaUl" class="list-group"></ul>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Array de coches
+let carro = [
+    {
+        nombre: "Bugatti Chiron Super Sport 300+",
+        potencia: "1500 caballos de fuerza",
+        motor: "8.0 litres W16",
+        foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/FoS20162016_0624_132444AA_%2827785299372%29.jpg/1200px-FoS20162016_0624_132444AA_%2827785299372%29.jpg"
+    },
+    {
+        nombre: "Koenigsegg Jesko",
+        potencia: "1600 caballos de fuerza",
+        motor: "V8 de 5.0 litres",
+        foto: "https://static1.squarespace.com/static/6371cc49cda4fd302dde5ccd/6371cc6c3fdcf76aaffc9461/65822083d05b9e1ab33d7608/1703027936280/Jesko%2BOdin%2BFront.jpg?format=1500w"
+    },
+    {
+        nombre: "Hennessey Venom F5",
+        potencia: "1800 caballos de fuerza",
+        motor: "V8 de 6.6 litres",
+        foto: "https://images.ecestaticos.com/91QLDzGlpNkldBJ9job84aw6PXY=/285x228:2001x1515/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F956%2F7b5%2F92d%2F9567b592d2b36f110ada98c8bc391896.jpg"
+    },
+    {
+        nombre: "Rimac C_Two",
+        potencia: "1900 caballos de fuerza",
+        motor: "Elèctric",
+        foto: "https://img.remediosdigitales.com/aeddf5/rimac-c_two-2019/1366_2000.jpg"
+    },
+    {
+        nombre: "Lamborghini Sian",
+        potencia: "800 caballos de fuerza",
+        motor: "V12 híbrid",
+        foto: "https://cdn.autobild.es/sites/navi.axelspringer.es/public/bdc/dc/fotos/lamborghini_sian.jpg?tf=3840x"
+    }
+];
+
+// Cargar datos en las tarjeta
+for (let i = 0; i < carro.length; i++) {
+    document.querySelector(`#imagenCarro${i}`).src = carro[i].foto;
+    document.querySelector(`#nombreCarro${i}`).innerHTML = carro[i].nombre;
+    document.querySelector(`#potenciaCarro${i}`).innerHTML = carro[i].potencia;
+    document.querySelector(`#motorCarro${i}`).innerHTML = carro[i].motor;
+
+   
+    document.querySelector(`#tablaIzq${i}`).innerHTML = carro[i].nombre;
+    document.querySelector(`#tablaDer${i}`).innerHTML = carro[i].nombre;
+}
+
+// Comparación de coches
+document.querySelector('#comparar').addEventListener('click', function () {
+    let cocheIzq = document.querySelector('#select1').value;
+    let cocheDere = document.querySelector('#select2').value;
+
+    // Control de errores 
+    if (cocheIzq === cocheDere) {
+        alert("Error al seleccionar");
+    }else {
+        // Pone los nombres, potencias y motores de los coches seleccionados
+        document.querySelector('#compararNombre1').innerHTML = carro[cocheIzq].nombre;
+        document.querySelector('#compararNombre2').innerHTML = carro[cocheDere].nombre;
+        document.querySelector('#compararPotencia1').innerHTML = carro[cocheIzq].potencia;
+        document.querySelector('#compararPotencia2').innerHTML = carro[cocheDere].potencia;
+        document.querySelector('#compararMotor1').innerHTML = carro[cocheIzq].motor;
+        document.querySelector('#compararMotor2').innerHTML = carro[cocheDere].motor;
+
+    }
+});
+
+// Busqueda
+document.querySelector('#buscar').addEventListener('click', function () {
+    // Recoge el número introducido
+    let numeroInfo = parseInt(document.querySelector('#buscarInput').value);
+    
+    // Control de errores
+    if (numeroInfo <= 0 || numeroInfo > 1900) { // muestra error si el numero es muy alto
+        alert("error introduce otra cantidad");
+    }
+
+    // Limpiar la lista de resultados antes de añadir nuevos
+    document.querySelector('#busquedaUl').innerHTML = '';
+
+    // Comprueba las potencias y las muestra
+    for (let i = 0; i < carro.length; i++) {
+        // Comparación con cada coche en el array
+        if (numeroInfo < parseInt(carro[i].potencia)) { 
+            document.querySelector('#busquedaUl').innerHTML += `<li>${carro[i].nombre} - ${carro[i].potencia}</li>`;
+        }
+    }
+});
+    </script>
+</body>
+
+</html>
