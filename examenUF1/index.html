@@ -179,36 +179,64 @@ generarTarjetas(carro);  //Llama a la funcion tarjeta
 generarOpcion(carro);   //llama a la funcion generarOpcion
 
   // Generar opciones para select
-  function generarOpcion(carro) { //Crear funcion para generar tablas
-            const select1 = document.querySelector('#select1');  
-            const select2 = document.querySelector('#select2');
-            let opciones = ''; //aca se almacena el html para rellenarlo 
-        for (let i = 0; i < carro.length; i++) {
-        const car = carro[i];
-        opciones += `<option value="${i}">${car.nombre}</option>`; // Crea las opciones por el numero de donde este el carro
-    }
-            select1.innerHTML += opciones; 
-            select2.innerHTML += opciones;  //Se agregan las opciones a los selects
-        }
-   
-     document.querySelector('#botonComparar').addEventListener('click', function() {
-        let cocheIzq = document.querySelector('#select1').value;
-        let cocheDere = document.querySelector('#select2').value;
-        console.log(cocheDere)
+  // Generar opciones para el select
+function generarOpcion(carro) { 
+    // Función que genera las opciones para dos elementos <select> con los nombres de los carros
 
-        // Control de errores 
-        if (cocheIzq === cocheDere) {
-            alert("Eror al seleccionar");
-        } else {
-            // Pone los nombres, potencias y motores de los coches seleccionados
-            document.querySelector('#compararNombre1').innerHTML = carro[cocheIzq].nombre;
-            document.querySelector('#compararNombre2').innerHTML = carro[cocheDere].nombre;
-            document.querySelector('#compararPotencia1').innerHTML = carro[cocheIzq].potencia;
-            document.querySelector('#compararPotencia2').innerHTML = carro[cocheDere].potencia;
-            document.querySelector('#compararMotor1').innerHTML = carro[cocheIzq].motor;
-            document.querySelector('#compararMotor2').innerHTML = carro[cocheDere].motor;
-        }
-    });
+    const select1 = document.querySelector('#select1');  
+    const select2 = document.querySelector('#select2');  
+    // Selecciona los dos elementos <select> en el HTML (con ids 'select1' y 'select2')
+
+    let opciones = ''; 
+    // Variable que almacenará el HTML de las opciones para el <select>
+
+    // Recorre el array "carro" para generar una opción para cada elemento
+    for (let i = 0; i < carro.length; i++) {
+        const car = carro[i]; 
+        // Obtiene el objeto carro en la posición actual del bucle
+
+        // Crea una opción en formato HTML donde el valor es el índice y el nombre del carro es el texto mostrado
+        opciones += `<option value="${i}">${car.nombre}</option>`;
+    }
+
+    // Agrega las opciones generadas al primer <select> ('select1')
+    select1.innerHTML += opciones; 
+    // Agrega las mismas opciones al segundo <select> ('select2')
+    select2.innerHTML += opciones;  
+}
+
+// Agrega un evento al botón con id 'botonComparar' que se activará cuando se haga clic
+document.querySelector('#botonComparar').addEventListener('click', function() {
+    let cocheIzq = document.querySelector('#select1').value;
+    let cocheDere = document.querySelector('#select2').value;
+    // Obtiene los valores seleccionados en los dos <select> (cocheIzq y cocheDere)
+    console.log(cocheDere); 
+    // Imprime el valor seleccionado en el segundo select para fines de depuración
+
+    // Control de errores: si se selecciona el mismo coche en ambos <select>
+    if (cocheIzq === cocheDere) {
+        alert("Error al seleccionar"); 
+        // Muestra una alerta si ambos coches seleccionados son iguales
+    } else {
+        // Si los coches seleccionados son diferentes, se muestran sus detalles en el HTML
+
+        // Muestra el nombre del coche seleccionado en el primer <select>
+        document.querySelector('#compararNombre1').innerHTML = carro[cocheIzq].nombre;
+        // Muestra el nombre del coche seleccionado en el segundo <select>
+        document.querySelector('#compararNombre2').innerHTML = carro[cocheDere].nombre;
+
+        // Muestra la potencia del coche seleccionado en el primer <select>
+        document.querySelector('#compararPotencia1').innerHTML = carro[cocheIzq].potencia;
+        // Muestra la potencia del coche seleccionado en el segundo <select>
+        document.querySelector('#compararPotencia2').innerHTML = carro[cocheDere].potencia;
+
+        // Muestra el motor del coche seleccionado en el primer <select>
+        document.querySelector('#compararMotor1').innerHTML = carro[cocheIzq].motor;
+        // Muestra el motor del coche seleccionado en el segundo <select>
+        document.querySelector('#compararMotor2').innerHTML = carro[cocheDere].motor;
+    }
+});
+
 // Busqueda
 document.querySelector('#buscar').addEventListener('click', function () { //Al seleccionar los botones
     // Recoge el número introducido
