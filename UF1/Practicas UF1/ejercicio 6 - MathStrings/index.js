@@ -10,6 +10,7 @@ document.querySelector("#btnAleatorio").addEventListener("click", function(){
     document.querySelector("#numeroAleatorio").innerHTML =  numAleatorio;
 })
 
+
 //2-Strings 
 
 
